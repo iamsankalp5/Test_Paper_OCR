@@ -1,0 +1,56 @@
+"""
+Enum classes for the application.
+"""
+from enum import Enum
+
+class WorkflowState(Enum):
+    """Workflow state enum."""
+    UPLOADED = "uploaded"
+    PREPROCESSING = "preprocessing"
+    PREPROCESSED = "preprocessed"
+    OCR_EXTRACTING = "ocr_extracting"
+    OCR_EXTRACTED = "ocr_extracted"
+    PARSING = "parsing"
+    PARSED = "parsed"
+    ASSESSING = "assessing"
+    ASSESSED = "assessed"
+    GENERATING_FEEDBACK = "generating_feedback"
+    FEEDBACK_GENERATED = "feedback_generated"
+    UNDER_REVIEW = "under_review"
+    REVIEWED = "reviewed"
+    REPORT_GENERATING = "report_generating"
+    COMPLETED = "completed"
+    FAILED = "failed"
+
+class QuestionType(Enum):
+    """Question type enum."""
+    MULTIPLE_CHOICE = "multiple_choice"
+    TRUE_FALSE = "true_false"
+    SHORT_ANSWER = "short_answer"
+    ESSAY = "essay"
+    FILL_IN_THE_BLANK = "fill_in_the_blank"
+
+class Grade(str, Enum):
+    """Grade enum."""
+    A_PLUS = "A+"
+    A = "A"
+    B_PLUS = "B+"
+    B = "B"
+    C_PLUS = "C+"
+    C = "C"
+    D = "D"
+    E = "E"
+    F = "F"
+
+class Subject(str, Enum):
+    """Subject enum."""
+    MATHEMATICS = "Mathematics"
+    SCIENCE = "Science"
+    ENGLISH = "English"
+    HISTORY = "History"
+    GEOGRAPHY = "Geography"
+    PHYSICS = "Physics"
+    CHEMISTRY = "Chemistry"
+    BIOLOGY = "Biology"
+    COMPUTER_SCIENCE = "Computer Science"
+    ECONOMICS = "Economics"

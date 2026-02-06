@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--sidebar-primary)) hsl(var(--sidebar-background));
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+  background: hsl(var(--sidebar-background));
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: hsl(var(--sidebar-primary));
+  border-radius: 8px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: hsl(var(--sidebar-background));
+}
+
+@layer base {
+  :root {
+    --background: 240 20% 8%;
+    --foreground: 210 100% 98%;
+
+    --card: 240 15% 12%;
+    --card-foreground: 210 100% 98%;
+
+    --popover: 240 15% 12%;
+    --popover-foreground: 210 100% 98%;
+
+    --primary: 260 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 20%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 280 70% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 20% 20%;
+    --input: 240 20% 18%;
+    --ring: 260 80% 60%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(260 80% 60%), hsl(280 70% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 60% 50%), hsl(260 80% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(240 20% 8%), hsl(260 30% 15%));
+    --glow-primary: 0 0 40px hsl(260 80% 60% / 0.4);
+    --glow-accent: 0 0 30px hsl(280 70% 65% / 0.3);
+
+    --sidebar-background: 240 20% 10%;
+    --sidebar-foreground: 210 100% 98%;
+    --sidebar-primary: 260 80% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 15% 15%;
+    --sidebar-accent-foreground: 210 100% 98%;
+    --sidebar-border: 240 20% 20%;
+    --sidebar-ring: 260 80% 60%;
+  }
+
+  .dark {
+    --background: 240 20% 8%;
+    --foreground: 210 100% 98%;
+
+    --card: 240 15% 12%;
+    --card-foreground: 210 100% 98%;
+
+    --popover: 240 15% 12%;
+    --popover-foreground: 210 100% 98%;
+
+    --primary: 260 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 20%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 280 70% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 20% 20%;
+    --input: 240 20% 18%;
+    --ring: 260 80% 60%;
+
+    --sidebar-background: 240 20% 10%;
+    --sidebar-foreground: 210 100% 98%;
+    --sidebar-primary: 260 80% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 15% 15%;
+    --sidebar-accent-foreground: 210 100% 98%;
+    --sidebar-border: 240 20% 20%;
+    --sidebar-ring: 260 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+  .glass-card {
+    @apply bg-card/40 backdrop-blur-xl border border-border/50;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(260 80% 60%), hsl(280 70% 65%));
+  }
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(260 80% 60%), hsl(280 70% 65%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+  .glow-primary {
+    box-shadow: 0 0 40px hsl(260 80% 60% / 0.4);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px hsl(280 70% 65% / 0.3);
+  }
+}

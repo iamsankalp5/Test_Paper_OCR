@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: agentic_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+
+  api:
+    build: .
+    container_name: agentic_api
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+    environment:
+      - MONGODB_URL=mongodb://admin:admin123@mongodb:27017
+      - MONGODB_DB_NAME=agentic_ai_db
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - DEBUG=True
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:

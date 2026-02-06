@@ -1,0 +1,58 @@
+# Core FastAPI & server
+fastapi
+uvicorn[standard]
+
+# Data models and validation
+pydantic
+pydantic-settings
+
+# Database & async drivers
+motor
+pymongo
+
+# File uploads and environment variables
+python-multipart
+python-dotenv
+aiofiles
+
+# PDF and image processing
+pdf2image
+PyPDF2
+pillow
+opencv-python
+PyMuPDF
+pypdf
+
+# OCR and AI processing
+pytesseract
+easyocr
+transformers
+torch
+torchvision
+torchaudio
+sentencepiece
+
+# AI APIs
+openai
+google-generativeai
+
+# Security and authentication
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+argon2_cffi
+email-validator
+PyJWT
+
+# Utilities
+numpy
+python-dateutil
+httpx
+faker
+
+# PDF/Reports
+reportlab
+
+# Testing
+pytest
+pytest-asyncio

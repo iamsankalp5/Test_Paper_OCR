@@ -1,0 +1,45 @@
+# --- Global ignore for both frontend and backend ---
+
+# Node modules
+frontend/node_modules/
+backend/node_modules/
+
+# Environment files
+*.env
+**/.env
+
+# Python cache and virtualenv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+env/
+venv
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Build and dist folders
+frontend/dist/
+backend/dist/
+build/
+dist/
+downloads/
+
+# Logs
+*.log
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary data folders
+temp/
+tmp/
+uploads/
+data/
